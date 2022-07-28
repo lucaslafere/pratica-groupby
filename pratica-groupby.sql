@@ -1,13 +1,15 @@
 -- exercicio 1
 
-SELECT COUNT(experiences."endDate") FROM experiences;
+SELECT COUNT(experiences."endDate") AS currentExperiences FROM experiences;
 
 -- exercicio 2
 
 SELECT educations."userId" as id, COUNT("userId") as educations
 FROM educations
-GROUP BY "userId"
-ORDER BY id ASC;
+GROUP BY "userId";
+
+-- a resoluçao no notion está diferente a ordem dos valores retornados, a resoluçao de lá retorna o mesmo valor e ordem do exercicio
+-- anterior, acredito que seja um erro no proprio notion
 
 -- exercicio 3
 
