@@ -20,9 +20,10 @@ GROUP BY u.name;
 
 -- exercicio 4
 
-SELECT jobs.salary as "maximumSalary", roles.name AS role
+SELECT MAX(jobs.salary) as "maximumSalary", roles.name AS role
 FROM jobs
 JOIN roles
 ON jobs."roleId" = roles.id
 WHERE jobs.active = true
-ORDER BY jobs.salary ASC;
+GROUP BY jobs."roleId", role
+ORDER BY "maximumSalary" ASC;
